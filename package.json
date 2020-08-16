@@ -1,0 +1,20 @@
+{
+    "name": "video-streaming-application",
+    "version": "1.0.0",
+    "description": "Video Streaming Application",
+    "main": "main.js",
+    "scripts": {
+        "start": "nodemon server.js",
+        "watch": "npx watchify ./public/masin.js -o ./public/bundle.js"
+    },
+    "author": "Sandeep K",
+    "dependencies": {
+        "express": "^4.17.1",
+        "simple-peer": "^9.7.2",
+        "socket.io": "^2.3.0"
+    },
+    "devDependencies": {
+        "package_name": "^1.0.2",
+        "watchify": "^3.11.1"
+    }
+}
