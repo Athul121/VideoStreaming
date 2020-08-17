@@ -4,7 +4,7 @@ const http = require('http').Server(app)
 const io = require('socket.io')(http)
 const port = process.env.PORT || 3000
 
-app.use(express.static(__dirname+ "/public"))
+app.use(express.static(__dirname + "/public"))
 let clients = 0
 
 io.on('connection', function(socket){
@@ -16,7 +16,7 @@ io.on('connection', function(socket){
         }
         else
             this.emit('SessionActive')
-            clients++
+        clients++;
     })
     socket.on('Offer', SendOffer)
     socket.on('Answer', SendAnswer)
@@ -36,4 +36,4 @@ function SendAnswer(data){
     this.broadcast.emit("BackAnswer", data)
 }
 
-http.listen(port, () => console.log('Active on ${port} port'))
+http.listen(port, () => console.log(`Active on ${port} port`))
