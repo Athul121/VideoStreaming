@@ -37,8 +37,8 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
            client.peer = peer 
         }
 
-        //for peer of tytpe notinit
-        function FrontAnswer(){
+        //for peer of type notinit
+        function FrontAnswer(offer){
             let peer = InitPeer('notInit')
             peer.on('signal',(data)=>{
                 socket.emit('Answer', data)
